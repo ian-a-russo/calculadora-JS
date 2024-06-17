@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <input class="tela" id="screen" type="text" readonly>
+            <div>
+                <button class="backspace" id="apagar">⌫</button>
+            </div>
+            <div class="bg-historico">
+                <div class="historico">
+                    <p><h4>Histórico</h4></p>
+                    <ul id="contas">
+
+                    </ul>
+                </div>
+            </div>
+            <table>
+                <div id="linha1">
+                    <tr>
+                        <th>
+                            <div>
+                                <button class="font-red config-button btn-dark-gray" id="C" type="button">C</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-operations config-button btn-dark-gray" id="parenteses" type="button">( )</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-operations config-button btn-dark-gray" id="porcentagem" type="button">%</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="dividir" type="button">÷</button>
+                            </div>
+                        </th>
+                    </tr>
+                </div>
+                <div id="linha2">
+                    <tr>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="sete" type="button">7</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="oito" type="button">8</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="nove" type="button">9</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="multiplicar" type="button">×</button>
+                            </div>
+                        </th>
+                    </tr>
+                </div>
+                <div id="linha3">
+                    <tr>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="quatro" type="button">4</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="cinco" type="button">5</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="seis" type="button">6</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="subtrair" type="button">-</button>
+                            </div>
+                        </th>
+                    </tr>
+                </div>
+                <div id="linha4">
+                    <tr>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="um" type="button">1</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="dois" type="button">2</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="tres" type="button">3</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="somar" type="button">+</button>
+                            </div>
+                        </th>
+                    </tr>
+                </div>
+                <div id="linha5">
+                    <tr>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="raiz quadrada" type="button">√</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="zero" type="button">0</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="virgula" type="button">,</button>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <button class="font-white config-button btn-dark-gray" id="igual" type="button">=</button>
+                            </div>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js"></script>
+    <script src=".\scriptCalc.js"></script>
+</body>
+</html>
