@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const contas = document.getElementById("contas");
 
-  const operadores = ["+", "%", "÷", "×", "√", ","];
+  const operadores = ["+", "%", "÷", "×", "√", ",", "-"];
 
   const botaoIgual = document
     .getElementById("igual")
