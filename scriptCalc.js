@@ -168,6 +168,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           textoTela = textoTela.replace("×", "*");
           textoTela = textoTela.replace("÷", "/");
           textoTela = textoTela.replace(",", ".");
+          textoTela = textoTela.replace("%", "/100*");
         }
         let expressao = textoTela;
         try {
