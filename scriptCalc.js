@@ -29,15 +29,13 @@ const botaoParenteses = document
 const botaoPorcentagem = document
   .getElementById("porcentagem")
   .addEventListener("click", () => {
-    textoTela += "%×";
-    tela.setAttribute("value", textoTela);
+    verificarOperadores("%");
   });
 
 const botaoDividir = document
   .getElementById("dividir")
   .addEventListener("click", () => {
-    textoTela += "÷";
-    tela.setAttribute("value", textoTela);
+    verificarOperadores("÷");
   });
 
 const botaoSete = document
@@ -64,8 +62,7 @@ const botaoNove = document
 const botaoMultiplicar = document
   .getElementById("multiplicar")
   .addEventListener("click", () => {
-    textoTela += "×";
-    tela.setAttribute("value", textoTela);
+    verificarOperadores("×");
   });
 
 const botaoQuatro = document
@@ -92,8 +89,7 @@ const botaoSeis = document
 const botaoSubtrair = document
   .getElementById("subtrair")
   .addEventListener("click", () => {
-    textoTela += "-";
-    tela.setAttribute("value", textoTela);
+    verificarOperadores("-");
   });
 
 const botaoUm = document.getElementById("um").addEventListener("click", () => {
@@ -118,15 +114,13 @@ const botaoTres = document
 const botaoSomar = document
   .getElementById("somar")
   .addEventListener("click", () => {
-    textoTela += "+";
-    tela.setAttribute("value", textoTela);
+    verificarOperadores("+");
   });
 
 const botaoRaizQuadrada = document
   .getElementById("raiz quadrada")
   .addEventListener("click", () => {
-    textoTela += "√";
-    tela.setAttribute("value", textoTela);
+    verificarOperadores("√");
   });
 
 const botaoZero = document
@@ -139,8 +133,7 @@ const botaoZero = document
 const botaoVirgula = document
   .getElementById("virgula")
   .addEventListener("click", () => {
-    textoTela += ",";
-    tela.setAttribute("value", textoTela);
+    verificarOperadores(",");
   });
 
 const contas = document.getElementById("contas");
@@ -171,9 +164,8 @@ const botaoIgual = document
       textoTela = textoTela.replace(",", ".");
     }
     let expressao = textoTela;
-    let result = 0;
     try {
-      result = math.evaluate(expressao);
+      let result = math.evaluate(expressao);
       historicoCalculos.push(`${textoInicial} = ${result}`);
       let conta = "";
       for (historico of historicoCalculos) {
@@ -182,12 +174,10 @@ const botaoIgual = document
           `;
       }
       contas.innerHTML = conta;
-    } catch (error) {
-      result = "Error";
-    }
-    textoTela = `${result}`;
-    textoTela = textoTela.replace(".", ",");
-    tela.setAttribute("value", textoTela);
+      textoTela = `${result}`;
+      textoTela = textoTela.replace(".", ",");
+      tela.setAttribute("value", textoTela);
+    } catch (error) {}
   });
 
 const botaoBackspace = document
@@ -203,3 +193,17 @@ const botaoDeletarHistorico = document
     historicoCalculos = [];
     contas.innerHTML = "";
   });
+
+const verificarOperadores = (novoOperador) => {
+  const operadores = "+-%÷×√,";
+  let index = textoTela.slice(-1);
+  if (operadores.includes(index) == true) {
+    textoTela = textoTela.slice(0, -1);
+    textoTela += novoOperador;
+    tela.setAttribute("value", textoTela);
+    return;
+  }
+  textoTela += novoOperador;
+  tela.setAttribute("value", textoTela);
+  return;
+};
