@@ -184,9 +184,17 @@ const botaoIgual = document
     }
     contas.innerHTML = conta;
   });
+
 const botaoBackspace = document
   .getElementById("apagar")
   .addEventListener("click", () => {
     textoTela = textoTela.slice(0, -1);
     tela.setAttribute("value", textoTela);
+  });
+
+const botaoDeletarHistorico = document
+  .getElementById("deletar-historico")
+  .addEventListener("click", () => {
+    historicoCalculos = [];
+    contas.innerHTML = "";
   });

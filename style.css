@@ -120,3 +120,21 @@ body {
     font-size: 25px;
     font-family:Arial, Helvetica, sans-serif;
 }
+.limpar-historico {
+    position:absolute;
+    right: 20px;
+    bottom: 20px;
+}
+#deletar-historico {
+    background-color: #25363f;
+    color: rgb(201, 201, 201);
+    cursor: pointer;
+    border-radius: 20%;
+    transition: background-color 0.2s ease;
+}
+#deletar-historico:hover {
+    background-color: #578eb3;
+}
+#deletar-historico:active {
+    background-color: #183041;
+}
