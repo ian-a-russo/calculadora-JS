@@ -95,6 +95,22 @@ body {
     right: 300px;
     bottom: 200px;
     border-radius: 5%;
+    overflow: auto;
+}
+.bg-historico::-webkit-scrollbar {
+    width: 12px;              
+}
+  
+.bg-historico::-webkit-scrollbar-track {
+    background: rgb(34, 46, 70);       
+}
+  
+.bg-historico::-webkit-scrollbar-thumb {
+    background-color: rgb(104, 133, 230);   
+    border-radius: 20px;     
+}
+.bg-historico::-webkit-scrollbar-thumb:active {
+    background-color: #326183;
 }
 #contas {
     background-color: transparent;
