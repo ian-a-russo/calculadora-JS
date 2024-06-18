@@ -171,18 +171,23 @@ const botaoIgual = document
       textoTela = textoTela.replace(",", ".");
     }
     let expressao = textoTela;
-    let result = math.evaluate(expressao);
+    let result = 0;
+    try {
+      result = math.evaluate(expressao);
+      historicoCalculos.push(`${textoInicial} = ${result}`);
+      let conta = "";
+      for (historico of historicoCalculos) {
+        conta = `${conta}
+          <li>${historico}</li>
+          `;
+      }
+      contas.innerHTML = conta;
+    } catch (error) {
+      result = "Error";
+    }
     textoTela = `${result}`;
     textoTela = textoTela.replace(".", ",");
     tela.setAttribute("value", textoTela);
-    historicoCalculos.push(`${textoInicial} = ${result}`);
-    let conta = "";
-    for (historico of historicoCalculos) {
-      conta = `${conta}
-        <li>${historico}</li>
-        `;
-    }
-    contas.innerHTML = conta;
   });
 
 const botaoBackspace = document
